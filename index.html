@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise 🎂</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Confetti CDN -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</head>
+<body>
+
+<!-- 🎵 MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn">🎵</button>
+
+<!-- COUNTDOWN -->
+<div id="countdown" class="screen active">
+  <h1 id="countText">3</h1>
+</div>
+
+<!-- LOADING -->
+<div id="loading" class="screen">
+  <h2 class="typing">Loading your birthday surprise...</h2>
+</div>
+
+<!-- START -->
+<div id="start" class="screen">
+  <h1 class="typing">My Girl was born 20 years ago today 💖</h1>
+  <button onclick="nextScreen('cake')">🎁 Start Surprise</button>
+</div>
+
+<!-- CAKE -->
+<div id="cake" class="screen">
+  <h2>Swipe to cut the cake 🎂</h2>
+  <div class="cake-container">
+    <img src="cake.png" id="cakeImg">
+    <div id="knife"></div>
+  </div>
+</div>
+
+<!-- WISH -->
+<div id="wish" class="screen">
+  <h1 class="typing">Happy Birthday rakesh ❤️</h1>
+  <button onclick="nextScreen('gallery')">Next →</button>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery" class="screen">
+  <h2>Some Sweet Moments 💕</h2>
+
+  <div class="card-stack">
+    <img src="img1.jpg" class="card active">
+    <img src="img2.jpg" class="card">
+    <img src="img3.jpg" class="card">
+  </div>
+
+  <button onclick="nextScreen('message')">Open Message 💌</button>
+</div>
+
+<!-- MESSAGE -->
+<div id="message" class="screen">
+  <h2>A Special Message 💖</h2>
+  <p id="typedText"></p>
+  <button onclick="speakMessage()">🔊 Speak Message</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
